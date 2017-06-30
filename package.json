@@ -1,0 +1,19 @@
+{
+  "name": "ngblog",
+  "version": "0.0.1",
+  "description": "blog for human being",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "angular",
+    "blog"
+  ],
+  "author": "SumitM",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp-connect": "^5.0.0",
+    "gulp-watch": "^4.3.11"
+  }
+}
