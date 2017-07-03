@@ -8,7 +8,7 @@ var watch = require('gulp-watch');
 
 var path = {
     HTML: ['client/*.html', 'client/views/**/*.html', 'client/views/*.html'],
-    JS: ['client/*.js', 'client/js/**/*.js', 'client/js/*.js', ],
+    JS: ['client/*.js', 'client/js/**/*.js', 'client/js/*.js'],
     CSS: ['src/css/*.css'],
     VENDOR: ['bower_components/angular/angular.js', 'bower_components/angular-animate/angular-aria.js', ],
     DIST: ['./dist']
@@ -19,6 +19,7 @@ gulp.task('watch', function() {
     // set livereload task in watch task, not directly
     gulp.watch(path.JS, ['livereload']);
 });
+
 gulp.task('livereload', function() {
     gulp.src('./client')
         .pipe(connect.reload());
@@ -31,6 +32,5 @@ gulp.task('connect', function() {
         livereload: true
     });
 });
-
 
 gulp.task('default', ['connect', 'watch'])

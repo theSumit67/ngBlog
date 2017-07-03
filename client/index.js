@@ -1,6 +1,8 @@
 ;(function(){
 	
-	angular.module('ngBlog',[]);
+	angular.module('ngBlog',[]).
+
+	.config('routeProvider');
 
 
 })()

@@ -13,7 +13,11 @@
   "author": "SumitM",
   "license": "ISC",
   "devDependencies": {
+    "express": "^4.15.3",
     "gulp-connect": "^5.0.0",
     "gulp-watch": "^4.3.11"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.2"
   }
 }
