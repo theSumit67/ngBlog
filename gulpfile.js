@@ -33,4 +33,4 @@ gulp.task('connect', function() {
     });
 });
 
-gulp.task('default', ['connect', 'watch'])
+gulp.task('default', ['connect', 'watch']);

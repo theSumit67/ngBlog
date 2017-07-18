@@ -1,9 +1,10 @@
+const path = require('path');
 const express = require('express');
-const app = express(),
-	   bodyParser = require('body-parser');
+const app = express();
+const bodyParser = require('body-parser');
 
 
-app.use(express.static(__dirname + '/'));
+app.use(express.static(path.join(__dirname, './')));
 
 app.use(bodyParser.json());
 

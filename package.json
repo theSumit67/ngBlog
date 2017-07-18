@@ -4,6 +4,8 @@
   "description": "blog for human being",
   "main": "index.js",
   "scripts": {
+    "prestart": "mongod --dbpath /media/asx/DDD/Z/EX/Angular/MS/db --fork --logpath /dev/null",
+    "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
