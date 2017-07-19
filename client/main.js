@@ -1,6 +1,6 @@
 
 	
-	angular.module('ngBlog',['ui.router'])
+	angular.module('ngBlog', ['ui.router'])
 
 	.config(function($stateProvider, $urlRouterProvider){
     
