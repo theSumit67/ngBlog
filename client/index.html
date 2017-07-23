@@ -31,6 +31,8 @@
             <li ui-sref-active="active"><a href="/" ui-sref="home">Home</a></li>
             <li ui-sref-active="active"><a href="#login" ui-sref="login" >LogIn</a></li>
             <li ui-sref-active="active"><a href="#registration" ui-sref="registration">Register</a></li>
+            <li ui-sref-active="active"><a href="#dashboard" ui-sref="dashboard">Dashboard</a></li>
+            <li class="pull-right"><a href="#" ui-sref="logout">Logout</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -42,6 +44,8 @@
         <h1>ng Blog index</h1>
         <p class="lead"></p>
         <div ui-view></div>
+        <hr>
+        <flash-message duration="5000"></flash-message>
       </div>
 
     </div><!-- /.container -->
@@ -51,9 +55,13 @@
 
     <script type="text/javascript" src="js/angular.js"></script>
     <script type="text/javascript" src="js/angular-ui-router.js"></script>
+    <script type="text/javascript" src="js/angular-animate.js"></script>
+    <script type="text/javascript" src="js/angular-flash.js"></script>
+    <!--  -->
     <script type="text/javascript" src="main.js"></script>
     <script type="text/javascript" src="js/services/AuthService.js"></script>
     <script type="text/javascript" src="registration/registration.controller.js"></script>
     <script type="text/javascript" src="login/login.controller.js"></script>
+    <script type="text/javascript" src="dashboard/dashboard.controller.js"></script>
 </body>
 </html>

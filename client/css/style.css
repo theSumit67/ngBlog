@@ -1,3 +1,17 @@
 body{
 	padding-top: 80px;
 }
+flash-message {
+    position: fixed;
+    bottom: 0;
+    right: 10px;
+}
+
+flash-message .alert {
+    padding: 8px;
+	margin-bottom: 10px;
+}
+flash-message .alert-dismissable .close,flash-message .alert-dismissible .close {
+    top: 0;
+    right: -4px;	
+}
