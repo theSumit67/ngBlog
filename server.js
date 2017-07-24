@@ -14,6 +14,7 @@ const passportSetup =  require('./api/config/passport');
 /*
 mongod --dbpath /media/asx/DDD/Z/EX/Angular/MS/db
 'C:/Program Files/MongoDB/Server/3.4/bin/mongod' --dbpath D:Z\EX\Angular\MS\db
+BASH
 'C:/Program Files/MongoDB/Server/3.4/bin/mongod' --dbpath D:/Z/EX/Angular/MS/db
 sumit/pass
 */

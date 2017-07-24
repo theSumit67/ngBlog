@@ -15,6 +15,8 @@ angular.module('ngBlog')
                                 param1: res.data.user.name
                             })
                             Flash.create('success', 'Login successfull');
+                        } else{
+                            Flash.create('danger', res.data.msg );
                         }
                     },
                     (err) => {

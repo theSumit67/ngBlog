@@ -1,4 +1,4 @@
-angular.module('ngBlog', ['ui.router','ngFlash', 'ngAnimate'])
+angular.module('ngBlog', ['ui.router','ngFlash', 'ngAnimate', 'toaster'])
 
   .config(function config($stateProvider, $urlRouterProvider, $httpProvider) {
 
@@ -31,9 +31,10 @@ angular.module('ngBlog', ['ui.router','ngFlash', 'ngAnimate'])
       })
       .state('logout', {
         resolve: {
-          user: function (AuthService, $state) {
+          user: function (AuthService, $state, Flash) {
             AuthService.logout();
             $state.go('login');
+            Flash.create('success', 'Logged Out');
           }
         }
       })
@@ -41,32 +42,25 @@ angular.module('ngBlog', ['ui.router','ngFlash', 'ngAnimate'])
         url: '/',
       });
 
-      function _skipIfAuthenticated($rootScope,AuthService, $q, $state, Flash) {
+      function _skipIfAuthenticated($rootScope,AuthService, $q, $state, Flash,toaster) {
         var defer = $q.defer();
         if (AuthService.getToken()) {
-          //$state.go('dashboard');
           defer.reject();
-          Flash.create('info', ' Already LoggedIn ');
+          toaster.pop('note', "", "Already LoggedIn");
         } else {
-          //$timeout(function () {
-          $state.go('login');
-          //});
           defer.resolve();
         }
         return defer.promise;
       }
 
-      function _redirectIfNotAuthenticated($rootScope,AuthService, $q, $state, Flash) {
-
+      function _redirectIfNotAuthenticated($rootScope,AuthService, $q, $state, Flash,toaster) {
         var defer = $q.defer();
 
         if (AuthService.getToken()) {
           defer.resolve();
         } else {
-          //$timeout(function () {
           $state.go('login');
-          Flash.create('danger', ' LogIn Required');
-          //});
+          toaster.error({body:"Login Required"});
           defer.reject();
         }
         return defer.promise;
