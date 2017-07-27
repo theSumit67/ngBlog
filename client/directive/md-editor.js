@@ -14,7 +14,7 @@ function mdEditor() {
         restrict: 'A',
         scope: {
 
-        },
+        }
         
         
     };
