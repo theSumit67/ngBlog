@@ -14,7 +14,11 @@ function mdEditor() {
         restrict: 'A',
         scope: {
 
+<<<<<<< HEAD
         }
+=======
+        },
+>>>>>>> b353d75e2ecf3cd2278534399c9c53bff589704f
         
         
     };
