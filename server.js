@@ -6,9 +6,11 @@ const passport = require('passport');
 const passportJWT = require('passport-jwt');
 const mongoose = require('mongoose');
 const chalk = require('chalk');
+const morgan = require('morgan');
 
 const config = require('./api/config/db');
 const userRoute = require('./api/routes/userRoute');
+const postRoute = require('./api/routes/postRoute');
 const passportSetup =  require('./api/config/passport');
 
 /*
@@ -33,10 +35,12 @@ mongoose.connection.on('error', (error) =>{
 // when application/x-www-form-urlencoded
 // app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(morgan('dev'))
 app.use(passport.initialize());
 passportSetup(passport);
 
 app.use('/user', userRoute);
+app.use('/post', postRoute);
 
 app.use(express.static(path.join(__dirname, './')));
 

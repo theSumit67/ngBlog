@@ -1,6 +1,15 @@
-angular.module('ngBlog', ['ui.router','ngFlash', 'ngAnimate', 'toaster'])
+angular.module('ngBlog', [
+  'ui.router',
+  'ngFlash',
+  'ngAnimate',
+  'toaster',
+  'ngSanitize',
+  'btford.markdown'
+])
 
-  .config(function config($stateProvider, $urlRouterProvider, $httpProvider) {
+  .config(function config($stateProvider, $urlRouterProvider, $httpProvider, $urlMatcherFactoryProvider) {
+
+    $urlMatcherFactoryProvider.strictMode(false);
 
     $urlRouterProvider.otherwise('/');
 
@@ -29,6 +38,11 @@ angular.module('ngBlog', ['ui.router','ngFlash', 'ngAnimate', 'toaster'])
           redirectIfNotAuthenticated: _redirectIfNotAuthenticated
         } 
       })
+      .state('dashboard.create-post', {
+        url: '/create-post',
+        templateUrl: 'dashboard/create-post.html',
+        controller: 'createPostController as cPC', 
+      })
       .state('logout', {
         resolve: {
           user: function (AuthService, $state, Flash) {
@@ -42,6 +56,7 @@ angular.module('ngBlog', ['ui.router','ngFlash', 'ngAnimate', 'toaster'])
         url: '/',
       });
 
+      
       function _skipIfAuthenticated($rootScope,AuthService, $q, $state, Flash,toaster) {
         var defer = $q.defer();
         if (AuthService.getToken()) {

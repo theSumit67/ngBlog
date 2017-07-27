@@ -1,6 +1,6 @@
 angular.module('ngBlog')
 
-    .controller('loginController', function ($scope, $state, AuthService, Flash) {
+    .controller('loginController', function ($scope, $state, AuthService, Flash, toaster) {
 
         var vm = this;
 
@@ -20,7 +20,7 @@ angular.module('ngBlog')
                         }
                     },
                     (err) => {
-                        console.log('XX')
+                        toaster.error({body:"Login backend error"});
                     });
         }
     })
