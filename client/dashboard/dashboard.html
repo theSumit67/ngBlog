@@ -1,3 +1,15 @@
-<h1>Dashboard</h1>
-<br>
-<h3>Hello {{ dC.user }}</h3>
+<h3>Hello {{ dC.user }}!</h3>
+<hr>
+<div ui-view>
+
+    <button class="btn-sm btn-primary" ui-sref="dashboard.create-post">Create Post</button>
+    <table>
+        <thead>
+            <tr><th>No</th><th>Title</th><th>Excerpt</th><th>Created</th><th>LastUpdated</th><th>Tags</th><th>Published</th><th>Edit</th></tr>
+        </thead>
+        <tbody>
+            <tr></tr>
+        </tbody>
+    </table>
+
+</div>

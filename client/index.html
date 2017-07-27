@@ -4,13 +4,16 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
+    <meta name="description" content="simple Blog">
     <meta name="author" content="SumitM">
     <link rel="icon" href="img/favicon.ico">
 
     <title>ngBlog</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/toaster.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://highlightjs.org/static/demo/styles/atom-one-dark.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css" />
     <link href="css/style.css" rel="stylesheet">
   </head>
 
@@ -33,7 +36,7 @@
             <li ui-sref-active="active"><a href="#login" ui-sref="login" >LogIn</a></li>
             <li ui-sref-active="active"><a href="#registration" ui-sref="registration">Register</a></li>
             <li ui-sref-active="active"><a href="#dashboard" ui-sref="dashboard">Dashboard</a></li>
-            <li class="pull-right"><a href="#" ui-sref="logout">Logout</a></li>
+            <li class="pull-right" style="float: right;"><a href="#" ui-sref="logout">Logout</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -50,8 +53,8 @@
         <hr>
         
         <toaster-container toaster-options="{'position-class': 'toast-bottom-right'}"></toaster-container>
-        </div> <!-- /.row -->
-      </div>
+        </div>
+      </div> <!-- /.row -->
 
     </div><!-- /.container -->
 
@@ -62,12 +65,20 @@
     <script type="text/javascript" src="js/angular-ui-router.js"></script>
     <script type="text/javascript" src="js/angular-animate.js"></script>
     <script type="text/javascript" src="js/angular-flash.js"></script>
+    <script type="text/javascript" src="js/angular-sanitize.js"></script>
     <script type="text/javascript" src="js/toaster.js"></script>
+    <script type="text/javascript" src="js/showdown.js"></script>
+    <script type="text/javascript" src="js/markdown.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
     <!--  -->
     <script type="text/javascript" src="main.js"></script>
     <script type="text/javascript" src="js/services/AuthService.js"></script>
     <script type="text/javascript" src="registration/registration.controller.js"></script>
     <script type="text/javascript" src="login/login.controller.js"></script>
     <script type="text/javascript" src="dashboard/dashboard.controller.js"></script>
+    <script type="text/javascript" src="dashboard/create-post.controller.js"></script>
+    <!--  -->
+    <script type="text/javascript" src="directive/md-editor.js"></script>
+    
 </body>
 </html>
