@@ -6,7 +6,6 @@ angular.module('ngBlog')
         $http.get('/user/profile')
         .then(function(res){
             vm.user = res.data.user.name;
-            console.log( res );
         },
         function(err){
             

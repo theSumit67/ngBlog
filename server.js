@@ -40,7 +40,7 @@ app.use(passport.initialize());
 passportSetup(passport);
 
 app.use('/user', userRoute);
-app.use('/post', postRoute);
+//app.use('/post', postRoute);
 
 app.use(express.static(path.join(__dirname, './')));
 

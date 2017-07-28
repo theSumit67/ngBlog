@@ -3,8 +3,10 @@ angular.module('ngBlog')
 
         var vm = this;
 
+        vm.mdApi = null;
+
         vm.save = function(){
-            console.log( $scope.postContent )
+            console.log( vm.mdApi.getContent() );
         }
         
         vm.publish = function(){

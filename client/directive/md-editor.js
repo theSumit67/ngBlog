@@ -7,29 +7,32 @@ function mdEditor() {
 
     var directive = {
         bindToController: true,
-        controller: mdEditorController,
-        transclude: true,
-        controllerAs: 'vm',
+        controller: function mdEditorController () { },
+        transclude: false,
+        controllerAs: 'mdEC',
         link: link,
-        restrict: 'A',
+        restrict: 'E',
+        template: `<textarea></textarea>`,
+        replace: true,
         scope: {
-
-<<<<<<< HEAD
+            api: '='
         }
-=======
-        },
->>>>>>> b353d75e2ecf3cd2278534399c9c53bff589704f
-        
-        
-    };
+    }
+    
     return directive;
     
     function link(scope, el, attrs, ctrl) {
-        simplemde = new SimpleMDE({ element: document.getElementById( attrs.id ) });
-        console.log( el )
-    }
-}
-/* @ngInject */
-function mdEditorController () {
-    
+        
+        var simplemde = new SimpleMDE({ element: document.getElementById( attrs.id ) });
+
+        ctrl.api = ctrl.api || {};
+        ctrl.api.getContent = function getContent() {
+            return simplemde.codemirror.getValue();
+        }
+        ctrl.api.setContent = function setContent(_content) {
+            simplemde.codemirror.setValue(_content);
+        }
+        
+    };
+
 }

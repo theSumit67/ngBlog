@@ -45,7 +45,7 @@ angular.module('ngBlog', [
       })
       .state('logout', {
         resolve: {
-          user: function (AuthService, $state, Flash) {
+          _meh: function (AuthService, $state, Flash) {
             AuthService.logout();
             $state.go('login');
             Flash.create('success', 'Logged Out');

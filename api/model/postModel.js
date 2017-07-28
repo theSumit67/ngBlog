@@ -5,6 +5,7 @@ const mongoose = require('mongoose'),
 
 const Post = new mongoose.Schema({
     title: { type: String, required: true },
+    slug: { type: String, required: true },
     tags: [ {type: String} ],
     is_published: { type: Boolean, default: false },
     content: { type: String, required: true },
