@@ -7,10 +7,19 @@
     <br>
     <table class="table">
         <thead>
-            <tr><th>No</th><th>Title</th><th>Excerpt</th><th>Created</th><th>LastUpdated</th><th>Tags</th><th>Published</th><th>Edit</th></tr>
+            <tr><th>No</th><th>Title</th><th>Excerpt</th><th>Slug</th><th>Created</th><th>LastUpdated</th><th>Tags</th><th>Published</th><th>Edit</th></tr>
         </thead>
         <tbody>
-            <tr></tr>
+            <tr ng-repeat="post in dC.postList ">
+                <td></td>
+                <td>{{ post.title}}</td>
+                <td></td>
+                <td>{{ post.slug }}</td>
+                <td>{{ post.created | date }}</td>
+                <td>{{ post.updated | date }}</td>
+                <td>{{ post.tags}}</td>
+                <td>{{ post.is_published}}</td>
+            </tr>
         </tbody>
     </table>
 

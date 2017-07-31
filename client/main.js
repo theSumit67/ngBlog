@@ -4,7 +4,8 @@ angular.module('ngBlog', [
   'ngAnimate',
   'toaster',
   'ngSanitize',
-  'btford.markdown'
+  'btford.markdown',
+  'ngTagsInput'
 ])
 
   .config(function config($stateProvider, $urlRouterProvider, $httpProvider, $urlMatcherFactoryProvider) {

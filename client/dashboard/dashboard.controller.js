@@ -7,8 +7,13 @@ angular.module('ngBlog')
         .then(function(res){
             vm.user = res.data.user.name;
         },
-        function(err){
-            
-        })
+        function(err){ })
+        
+        $http.get('/post/listPost')
+        .then(function(res){
+            vm.postList = res.data;
+        },
+        function(err){ })
+
 
     })
