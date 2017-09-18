@@ -1,3 +1,4 @@
+'use strict';
 const express = require('express'),
     router = express.Router(),
     passport = require('passport'),
@@ -56,5 +57,17 @@ router.get('/listPost', passport.authenticate('jwt', { session: false }), ( req,
     })
 
 })
+
+
+router.get('/delete-post/:id', passport.authenticate('jwt', { session: false }), ( req, res, next ) => {
+
+    if ( req.params.id ){
+        Post.deletePost ( req.params.id, (err) =>{
+            if ( err ) throw err;
+            res.send ( "Post Deleted" );
+        })
+    }
+});
+
 
 module.exports = router;

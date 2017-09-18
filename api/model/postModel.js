@@ -1,3 +1,4 @@
+'use strict';
 const mongoose = require('mongoose'),
 	bcrypt = require('bcryptjs'),
 	config = require('../config/db');
@@ -31,5 +32,12 @@ module.exports.getPostByUsername =  ( username, callback) => {
 	
 	const query = { username: username }
 	Post.find(query, callback);
+
+}
+
+module.exports.deletePost =  ( id, callback ) => {
+	
+	const query = { "_id": id }
+	Post.remove( query, callback);
 
 }

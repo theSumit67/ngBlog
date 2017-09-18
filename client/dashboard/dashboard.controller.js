@@ -1,5 +1,6 @@
+'use strict';
 angular.module('ngBlog')
-    .controller('dashboardController', function($scope,$stateParams, $http, Flash) {
+    .controller('dashboardController', function( $scope, $stateParams, $http, Flash, toaster) {
 
         var vm = this;
 
@@ -9,11 +10,24 @@ angular.module('ngBlog')
         },
         function(err){ })
         
-        $http.get('/post/listPost')
-        .then(function(res){
-            vm.postList = res.data;
-        },
-        function(err){ })
+        function loadAll(){
+            $http.get('/post/listPost')
+            .then(function(res){
+                vm.postList = res.data;
+            },
+            function(err){ })
+        }
+        loadAll();
+
+        vm.deletePost = function(id){
+            $http.get('/post/delete-post/' + id)
+            .then(function(res){
+                toaster.info( res.data );  
+                loadAll();
+            },
+            function(err){ })
+    
+        }
 
 
     })

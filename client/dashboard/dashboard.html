@@ -19,6 +19,8 @@
                 <td>{{ post.updated | date }}</td>
                 <td>{{ post.tags}}</td>
                 <td>{{ post.is_published}}</td>
+                <td > <button ng-click="dC.deletePost( post._id )" style="color: red">Delete </button></td>
+
             </tr>
         </tbody>
     </table>

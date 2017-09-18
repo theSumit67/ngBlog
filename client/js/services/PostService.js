@@ -1,3 +1,4 @@
+'use strict';
 angular.module('ngBlog')
 
     .factory('PostService', function($http, $window) {
